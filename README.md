@@ -2,6 +2,11 @@
 
 # [Author](https://github.com/BastidaNicolas/nextauth-prisma-stripe/tree/master)
 
+## Note
+
+Few changes were made to add cancellation of subscription and also to give free trial period to users.
+If you want to learn how to implement the same with <strong>Dynamodb</strong> [click here](https://github.com/Thabish-Kader/stripe-subscriptions-dynamodb)
+
 ![nextauth-prisma-stripe vercel app_subscription](https://github.com/BastidaNicolas/nextauth-prisma-stripe/assets/74965310/8d54f9ac-0121-416c-a83e-63f3ec6d794a)
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
@@ -282,6 +287,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
         - Create `/api/webhooks/route.ts`.
 
             - Initialize Stripe, the `webhookSecret` variable, and the `webhookHandler` async arrow function, and export it as POST. It should look like this:
+
                 ```typescript
                 import Stripe from "stripe";
                 import prisma from "../../../../prisma/prisma";
@@ -300,6 +306,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
                 export { webhookHandler as POST };
                 ```
+
             - Inside a `try{}catch{}` block, initialize variables to save the request in text form, the "stripe-signature" header, and a `let` variable that is initially undefined. This last variable is used to save the Stripe webhook event that will be created. The code should look like this:
 
                 ```typescript
