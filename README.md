@@ -1,6 +1,6 @@
 # How To Integrate Subscriptions Into Your Next.js Project (/app). (Next.js, Next-Auth, Prisma, Stripe)
 
-# [Author](https://github.com/BastidaNicolas/nextauth-prisma-stripe/tree/master)
+# Full Credits [Author](https://github.com/BastidaNicolas/nextauth-prisma-stripe/tree/master)
 
 ## Note
 
